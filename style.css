@@ -1,0 +1,44 @@
+#modo-light {
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  transition: 1s ease;
+}
+
+body.dark {
+  background-color: #333;
+  color: #fff;
+  transition: 1s ease;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+button:active {
+  background-color: #555;
+  color: #fff;
+}
+
+button:focus {
+  background-color: #666;
+  color: #fff;
+}
