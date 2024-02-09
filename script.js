@@ -1,14 +1,32 @@
-const modoDark = document.getElementById("modoDark");
-const body = document.body;
+// Verificar se o usuário já tem uma preferência de tema salva no localStorage
+if (localStorage.getItem("darkMode") === "true") {
+  enableDarkMode();
+}
 
-function modoDarkToggle() {
-  body.classList.toggle("dark");
+// Adicionar um evento de clique ao botão
+document
+  .getElementById("darkModeButton")
+  .addEventListener("click", toggleDarkMode);
 
-  if (body.classList.contains("dark")) {
-    modoDark.innerText = "Modo claro";
+// Função para ativar ou desativar o modo escuro
+function toggleDarkMode() {
+  if (localStorage.getItem("darkMode") === "true") {
+    disableDarkMode();
   } else {
-    modoDark.innerText = "Modo escuro";
+    enableDarkMode();
   }
+}
 
-  localStorage.setItem("modoDark", body.classList.contains("dark"));
+// Função para ativar o modo escuro
+function enableDarkMode() {
+  document.body.style.backgroundColor = "#333";
+  document.body.style.color = "#fff";
+  localStorage.setItem("darkMode", "true");
+}
+
+// Função para desativar o modo escuro
+function disableDarkMode() {
+  document.body.style.backgroundColor = "#fff";
+  document.body.style.color = "#333";
+  localStorage.setItem("darkMode", "false");
 }
